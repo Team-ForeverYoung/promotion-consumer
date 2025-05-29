@@ -1,0 +1,27 @@
+package com.java.promotionconsumer.consumer;
+
+import org.springframework.kafka.annotation.KafkaListener;
+
+import com.java.promotionconsumer.dto.PromotionResultMessage;
+import com.java.promotionconsumer.service.PromotionLogService;
+
+public class KafkaPromotionLogConsumer implements PromotionLogConsumer{
+
+	private final static String TOPIC = "promotion_result";
+	private final PromotionLogService promotionLogService;
+
+	public KafkaPromotionLogConsumer(PromotionLogService promotionLogService) {
+		this.promotionLogService = promotionLogService;
+	}
+
+	@Override
+	@KafkaListener(topics = TOPIC, containerFactory = "promotionResultConsumerFactory")
+	public void promotionResultConsumer(PromotionResultMessage message) {
+		promotionLogService.savePromotionResultLog(message);
+	}
+
+
+
+
+}
+
