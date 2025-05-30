@@ -16,7 +16,7 @@ public class KafkaPromotionLogConsumer implements PromotionLogConsumer{
 	}
 
 	@Override
-	@KafkaListener(topics = TOPIC, containerFactory = "promotionResultConsumerFactory")
+	@KafkaListener(topics = TOPIC, containerFactory = "promotionResultConsumerFactoryContainer")
 	public void promotionResultConsumer(PromotionResultMessage message) {
 		promotionLogService.savePromotionResultLog(message);
 	}
