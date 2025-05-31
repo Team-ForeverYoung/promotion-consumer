@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 import com.java.promotionconsumer.entity.PromotionResultLog;
 @Repository
-public interface PromotionResultRepository extends MongoRepository<PromotionResultLog, String> {
+public interface EventResultRepository extends MongoRepository<PromotionResultLog, String> {
 }

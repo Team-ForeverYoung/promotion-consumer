@@ -2,7 +2,7 @@ package com.java.promotionconsumer.entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.java.promotionconsumer.dto.PromotionResultMessage;
+import com.java.promotionconsumer.dto.EventResultMessage;
 
 import lombok.Getter;
 
@@ -22,7 +22,7 @@ public class PromotionResultLog {
 		this.message = message;
 	}
 
-	public static PromotionResultLog from(PromotionResultMessage resultMessage, String message){
+	public static PromotionResultLog from(EventResultMessage resultMessage, String message){
 		return new PromotionResultLog(resultMessage.getEventId(), resultMessage.getUserId(), resultMessage.getUserName(),
 			resultMessage.getEventName(), message);
 	}

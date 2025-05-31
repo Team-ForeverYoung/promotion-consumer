@@ -1,11 +1,11 @@
 package com.java.promotionconsumer.factory;
 
-import com.java.promotionconsumer.dto.PromotionResultMessage;
+import com.java.promotionconsumer.dto.EventResultMessage;
 import com.java.promotionconsumer.entity.PromotionResultLog;
 
-public class PromotionResultLogFactory {
+public class EventResultLogFactory {
 
-	public static PromotionResultLog createPromotionResultLog(PromotionResultMessage message) {
+	public static PromotionResultLog createPromotionResultLog(EventResultMessage message) {
 		String userName = message.getUserName();
 		String eventName = message.getEventName();
 		String result;
