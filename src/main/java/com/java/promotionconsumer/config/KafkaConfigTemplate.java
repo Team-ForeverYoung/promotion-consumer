@@ -24,6 +24,8 @@ public class KafkaConfigTemplate {
 		config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, org.springframework.kafka.support.serializer.JsonDeserializer.class);
 		config.put(ConsumerConfig.GROUP_ID_CONFIG, "event-result-group");
+		config.put("spring.json.type.mapping", "EventJoinMessage:com.java.backend.domain.promotion.dto.EventJoinMessage");
+
 		config.put("spring.json.value.default.type", "com.java.promotionconsumer.dto.PromotionResultMessage");
 		config.put("spring.json.trusted.packages", "com.java.promotionconsumer");
 		return new DefaultKafkaConsumerFactory<>(config);
