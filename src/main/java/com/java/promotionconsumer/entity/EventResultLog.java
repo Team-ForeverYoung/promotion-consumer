@@ -8,13 +8,13 @@ import lombok.Getter;
 
 @Getter
 @Document(collation = "promotion_logs")
-public class PromotionResultLog {
+public class EventResultLog {
 	private final Long eventId;
 	private final Long userId;
 	private final String userName;
 	private final String eventName;
 	private final String message;
-	private PromotionResultLog(Long eventId, Long userId, String userName, String eventName, String message) {
+	private EventResultLog(Long eventId, Long userId, String userName, String eventName, String message) {
 		this.eventId = eventId;
 		this.userId = userId;
 		this.userName = userName;
@@ -22,8 +22,8 @@ public class PromotionResultLog {
 		this.message = message;
 	}
 
-	public static PromotionResultLog from(EventResultMessage resultMessage, String message){
-		return new PromotionResultLog(resultMessage.getEventId(), resultMessage.getUserId(), resultMessage.getUserName(),
+	public static EventResultLog from(EventResultMessage resultMessage, String message){
+		return new EventResultLog(resultMessage.getEventId(), resultMessage.getUserId(), resultMessage.getUserName(),
 			resultMessage.getEventName(), message);
 	}
 }

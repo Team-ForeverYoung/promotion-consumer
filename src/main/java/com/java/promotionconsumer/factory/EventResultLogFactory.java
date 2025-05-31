@@ -1,11 +1,11 @@
 package com.java.promotionconsumer.factory;
 
 import com.java.promotionconsumer.dto.EventResultMessage;
-import com.java.promotionconsumer.entity.PromotionResultLog;
+import com.java.promotionconsumer.entity.EventResultLog;
 
 public class EventResultLogFactory {
 
-	public static PromotionResultLog createPromotionResultLog(EventResultMessage message) {
+	public static EventResultLog createPromotionResultLog(EventResultMessage message) {
 		String userName = message.getUserName();
 		String eventName = message.getEventName();
 		String result;
@@ -21,6 +21,6 @@ public class EventResultLogFactory {
 				+ "이번에 참여하신 " + eventName + "은(는) 조기 재고 소진으로 부득이하게 당첨되지 않으셨습니다. 다음에도 참여 부탁드립니다.";
 		}
 
-		return PromotionResultLog.from(message, logMessage);
+		return EventResultLog.from(message, logMessage);
 	}
 }
