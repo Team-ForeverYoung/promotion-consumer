@@ -4,11 +4,11 @@ import lombok.Getter;
 
 @Getter
 public class PromotionResultMessage {
-	private final boolean success;
-	private final Long userId;
-	private final Long eventId;
-	private final String userName;
-	private final String eventName;
+	private boolean success;
+	private Long userId;
+	private Long eventId;
+	private String userName;
+	private String eventName;
 
 	public PromotionResultMessage(boolean success, Long userId, Long eventId, String userName, String eventName) {
 		this.success = success;
